@@ -1,3 +1,25 @@
+# 9-1-1 Scanner Suite
+
+**An accessible, screen-reader-friendly Windows police scanner app.**
+
+> Built with blind and visually impaired users in mind, this app makes it easy to stream live police, fire, and EMS audio feeds without relying on inaccessible web interfaces.
+
+---
+
+## 🔍 Features
+
+- Screen-reader optimized (tested with NVDA & JAWS)
+- Full keyboard support
+- Clean, menu-based interface
+- Broadcastify stream access
+- Designed in Visual Studio for Windows
+- Future support: local scanner programming, NOAA weather alerts, and more!
+
+---
+
+## 🚀 Getting Started
+
+1. Clone this repository:
 2. Open the project in Visual Studio 2019 or later.
 3. Build the project and run the executable.
 
@@ -52,3 +74,4 @@ If you’re a user, contributor, or just curious:
 - Share in blind tech forums
 - Spread the word if you find it useful!
 
+  
