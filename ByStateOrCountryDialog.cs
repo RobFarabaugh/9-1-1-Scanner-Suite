@@ -8,9 +8,10 @@ namespace ScannerSuite
         public ByStateOrCountryDialog()
         {
             InitializeComponent();
+            Setup();
         }
 
-        private void InitializeComponent()
+        private void Setup()
         {
             this.Text = "By State Or Country";
             this.StartPosition = FormStartPosition.CenterParent;
