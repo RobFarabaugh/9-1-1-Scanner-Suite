@@ -25,13 +25,13 @@ This is an early prototype, not a working scanner yet. Please read this before f
 **What works today**
 
 - The app launches on Windows and shows a menu bar: **Feed**, **Favorites**, **Settings**, **Help**.
-- A `ByStateOrCountryDialog` exists with a state/country dropdown and OK/Cancel buttons.
+- **Feed → By State or Country...** opens the dialog and reports the state or country you chose.
 
 **What does not work yet**
 
-- The menus are empty and have no click handlers, so nothing in them can be selected.
+- Only the Feed menu has an item; **Favorites**, **Settings** and **Help** are still empty.
 - No audio streaming, feed lists, favourites, or settings are implemented.
-- The By State Or Country dialog selects a state or country and returns it to a caller, but nothing in the menu opens it yet.
+- Choosing a state or country does not load any feeds yet: it only reports the choice.
 - The keyboard shortcuts listed below are planned, not active.
 
 ---
@@ -88,7 +88,7 @@ All interface items are intended to be reachable with `Tab` and the arrow keys.
 
 ## 🗺️ Roadmap
 
-- [ ] Finish the By State Or Country dialog, including returning the selected value
+- [x] Finish the By State Or Country dialog, including returning the selected value
 - [ ] Add a Genre selection dialog
 - [ ] Add an Alert Feeds dialog
 - [ ] Add an "Add Scanner Feed Manually" dialog
