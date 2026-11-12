@@ -1,4 +1,3 @@
-﻿using System;
 using System.Windows.Forms;
 
 namespace ScannerSuite
@@ -10,54 +9,31 @@ namespace ScannerSuite
             InitializeComponent();
         }
 
-        private void InitializeComponent()
+        /// <summary>
+        /// The state or country currently selected in the dialog. Always one of the
+        /// listed entries, because the combo box has no empty state.
+        /// </summary>
+        public string SelectedStateOrCountry
         {
-            this.Text = "By State Or Country";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Width = 400;
-            this.Height = 200;
+            get { return this.comboBox.SelectedItem as string; }
+        }
 
-            Label label = new Label();
-            label.Text = "Select a state or country:";
-            label.Top = 20;
-            label.Left = 20;
-            label.Width = 200;
-            this.Controls.Add(label);
-
-            ComboBox comboBox = new ComboBox();
-            comboBox.Left = 20;
-            comboBox.Top = 50;
-            comboBox.Width = 300;
-            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox.Items.AddRange(new string[]
+        /// <summary>
+        /// Shows the dialog and returns the chosen state or country, or null if the
+        /// user cancelled or closed it. The caller checks one value instead of
+        /// remembering to compare DialogResult, and the dialog is disposed for them.
+        /// </summary>
+        public static string ShowSelection(IWin32Window owner)
+        {
+            using (ByStateOrCountryDialog dialog = new ByStateOrCountryDialog())
             {
-                "United States",
-                "Canada",
-                "United Kingdom",
-                "Australia",
-                "Germany"
-            });
-            this.Controls.Add(comboBox);
+                if (dialog.ShowDialog(owner) != DialogResult.OK)
+                {
+                    return null;
+                }
 
-            Button okButton = new Button();
-            okButton.Text = "OK";
-            okButton.Left = 220;
-            okButton.Top = 100;
-            okButton.DialogResult = DialogResult.OK;
-            this.Controls.Add(okButton);
-
-            Button cancelButton = new Button();
-            cancelButton.Text = "Cancel";
-            cancelButton.Left = 300;
-            cancelButton.Top = 100;
-            cancelButton.DialogResult = DialogResult.Cancel;
-            this.Controls.Add(cancelButton);
-
-            this.AcceptButton = okButton;
-            this.CancelButton = cancelButton;
+                return dialog.SelectedStateOrCountry;
+            }
         }
     }
 }

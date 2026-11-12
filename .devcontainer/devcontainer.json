@@ -1,6 +1,6 @@
 {
-  "name": "C# Windows App",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:0-6.0",
+  "name": "9-1-1 Scanner Suite",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
   "customizations": {
     "vscode": {
       "extensions": [
