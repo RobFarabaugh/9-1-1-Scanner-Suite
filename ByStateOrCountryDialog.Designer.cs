@@ -41,10 +41,12 @@ namespace ScannerSuite
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(200, 20);
             this.label.TabIndex = 0;
-            this.label.Text = "Select a state or country:";
+            this.label.Text = "&Select a state or country:";
             //
             // comboBox
             //
+            this.comboBox.AccessibleDescription = "Choose the state or country whose feeds you want to browse.";
+            this.comboBox.AccessibleName = "State or country";
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.Items.AddRange(new object[] {
             "United States",
@@ -56,6 +58,9 @@ namespace ScannerSuite
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(300, 21);
             this.comboBox.TabIndex = 1;
+            // Default to the first entry so a screen reader always announces a value
+            // and OK never returns an empty selection.
+            this.comboBox.SelectedIndex = 0;
             //
             // okButton
             //
@@ -64,7 +69,7 @@ namespace ScannerSuite
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 2;
-            this.okButton.Text = "OK";
+            this.okButton.Text = "&OK";
             this.okButton.UseVisualStyleBackColor = true;
             //
             // cancelButton
@@ -74,7 +79,7 @@ namespace ScannerSuite
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 3;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "&Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             //
             // ByStateOrCountryDialog

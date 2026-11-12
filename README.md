@@ -31,7 +31,7 @@ This is an early prototype, not a working scanner yet. Please read this before f
 
 - The menus are empty and have no click handlers, so nothing in them can be selected.
 - No audio streaming, feed lists, favourites, or settings are implemented.
-- The By State Or Country dialog is not yet opened from the menu, and does not yet expose the selected value to a caller.
+- The By State Or Country dialog selects a state or country and returns it to a caller, but nothing in the menu opens it yet.
 - The keyboard shortcuts listed below are planned, not active.
 
 ---
